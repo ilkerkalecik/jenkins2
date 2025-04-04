@@ -17,13 +17,11 @@ pipeline {
             }
         }
 
-        stage('Run Docker Container') {
-            steps {
-                script {
-                    // Docker container başlat
-                    sh 'docker run -d -p 8080:80 myapp'
-                }
-            }
+stage('Run Docker Container') {
+    steps {
+        script {
+            // Docker container başlat
+            sh 'docker run -d -p 9090:8080 -p 50000:50000 myapp'
         }
     }
 }
